@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Data Dashboard</title>
     <link rel="stylesheet" href="styleinit.css" />
@@ -9,14 +9,27 @@
   </head>
   <body>
     <header>
-        <img src="../images/laboratoria-logoinit.png" alt = "El logo de laboratoria">
+      <div class="container">
+        <img src="../images/laboratoria-logoinit.png" alt = "El logo de laboratoria" class="logo">
+      </div>
     </header>
-    <main>
-        <a class = "bt" id = "izq" href = "indexco.html">Lima</a>
-        <a class = "bt" id = "der" >Sao Paulo</a>
-        <a class = "bt" id = "izq">Guadalajara</a>
-        <a class = "bt" id = "der">CDMX</a>
-        <a class ="bt" id = "ambos">Santiago</a>
-    </main>
+      <div class ="wrapper">
+         <div class="one">
+            <a href="indexco.html"><button class="btn">Lima</button></a>
+         </div>
+         <div class="two">
+            <button class="btn">Santiago</button>
+         </div>
+         <div class="three">
+            <button class="btn">Sao Paulo</button>
+         </div>
+         <div class="four">
+            <button class="btn">CDMX</button>
+         </div>
+         <div class="five">
+            <button class="btn">Guadalajara</button>
+         </div>
+      </div>
   </body>
   </html>
+
