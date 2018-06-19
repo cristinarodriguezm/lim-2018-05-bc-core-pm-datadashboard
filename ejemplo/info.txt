@@ -58,3 +58,98 @@ fetch ("url data del data/cohor.json" )
 
 3.5. recorrer objetos y arrays
 si el nombre q ingresa es igual a mi data 
+
+
+----------->los cohorts<------------------------ API
+
+const get data = (url) =>{
+        fetch(url)
+        .then ((response) =>
+                response.json()
+        )
+        .then ((cohorts) =>
+                console.log(cohorts);
+                for (cohort of cohorts){ //
+                document.getElementById("tabla").innerhtml *= cohort.id * "<br/>"
+                debugger //ver parte por parte
+        })
+        .catch((er) =>{
+                console.log (err);
+        });
+        };
+get data = ("api de laboratoria")
+
+-------------->nombre de estudiantes<------------------
+const get data = (url) =>{
+        fetch(url)
+        .then ((response) =>
+                response.json()
+        )
+        .then ((students) =>
+                console.log(students);
+                for (student of students){ //
+                document.getElementById("tabla").innerhtml += student.name * "<br/>"
+                //debugger //ver parte por parte
+        })
+        .catch((er) =>{
+                console.log (err);
+        });
+        };
+
+
+let userData = {
+        users:students,
+        progress : studentsProgrress
+}
+let options = {
+        cohort : cohortsList,
+        cohortData : cohortData,
+        ..
+}
+let userstoPrint = processCohortData(options)
+showUInTable(userstoPrint);
+
+const processCohortData = (options) => {
+        let users = options.cohortData.users;
+        let progress = options.cohortData.progress
+        let usersWithGrades = computeUsersStates(users,progress,courses);
+}
+
+1- necesita cargar la lista de cohorts
+al seleccionar unos
+llamar a las estudiantes
+llamar sus progressos
+
+-------------->añadir o quitar clases<------------------show/hide para ocultarymostrar sin css
+
+const butdeclass = documentgetelementbyid(button);
+const saludo = documentgetelementebyid();
+butdeclass.addeventlistener("click", ()=>{
+        
+})
+
+------------------>objetc.keys<----------------
+const equipos = {
+        rusia:{jugadores:11},
+        peru:{jugadores:11}
+}
+console.log(equipos);
+
+object.keys(equipos);//me devuelve el arreglo de las llaves del objeto
+->["rusia","peru"]
+
+for(key of keys){
+        console.log(key);
+}
+->
+
+for(key of keys){
+        console.log(equipos[key]);
+        for (let property in equipos[key]){
+                console.log(property);
+        }
+}
+->jugadores:11
+  jugadore:11
+
+--->for in es para iterar sobre las propiedades de los objetos sin utilizar el objet keys<-----
