@@ -63,7 +63,7 @@ fetch ("../data/cohorts/lim-2018-03-pre-core-pw/progress.json" )
         .then(function(progress){
             console.log(progress);
         });
-*/
+
 
 
 /*form.addEventListener("submit", function(e){
