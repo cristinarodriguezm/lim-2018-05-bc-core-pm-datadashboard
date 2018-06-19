@@ -2,7 +2,11 @@ img {
     display : block;
     margin : auto;
 }
+.container {
+  
+    grid-template-columns: repeat(4, 1fr);
 
+}
 .bt {
     color : #000000;
     font-family: 'Bitter', serif;

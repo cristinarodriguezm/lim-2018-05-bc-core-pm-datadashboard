@@ -25,6 +25,7 @@ fetch("../data/cohorts/lim-2018-03-pre-core-pw/users.json")
 3 (interactivo) o ( solicitud de procesamiento )
 4 (completo) o ( solicitud finalizada y la respuesta está lista )
 */ 
+
 fetch ("../data/cohorts/lim-2018-03-pre-core-pw/progress.json" )
         .then(function(progress){
         return progress.json();
