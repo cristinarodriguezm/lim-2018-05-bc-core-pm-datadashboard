@@ -49,7 +49,7 @@ caniuse.com  : herramienta para saber q cosa se utiliza en que
 
 fetch ("url data del data/cohor.json" )
         .then(function(response){
-        return repsonse.json();
+        return response.json();
         })
         .then(function(data){
         console.log(typeof data);
