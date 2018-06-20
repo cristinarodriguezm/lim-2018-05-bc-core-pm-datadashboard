@@ -17,14 +17,25 @@ function girls() {
                 return response.json(); //conexion con el json
                                         //y como queremos q lo traiga json
             })
-            .then(function(data){ //aqui ya tenemos los datos
+            .then(function(data){ //aqui ya tenemos los datos,
                 let html = "";
+                nameOfStudents = data.filter(function(names){
+                    if( names.signupCohort === "lim-2018-03-pre-core-pw" && names.role === "student"){
+                        html +=`
+                        <li>${names.name}</li>`;
+                    }
+                })
+                listStudents.innerHTML = html;
+               
+               /* ----------------> USANDO ForEACH <----------
+               let html = "";
                 data.forEach(function(names){
                     html +=`
                     <li>${names.name}</li>`;
                 })
-             listStudents.innerHTML = html;
-            /* for(let i=0; i<data.length; i++){
+             listStudents.innerHTML = html;*/
+            /*-------------------->USANDO for <-----------
+             for(let i=0; i<data.length; i++){
                     let students = document.createElement("li");
                     students.innerHTML = data[i].name + " ";
                     listStudents.appendChild(students);
