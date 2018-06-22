@@ -45,7 +45,6 @@ function girls() {
                 });       
                 }}
 
-<<<<<<< HEAD
     /*  lista completa de los readyStatevalores está documentada en XMLHTTPRequest.readyState y es la siguiente:
 0 (sin inicializar) o ( solicitud no inicializada )
 1 (carga) o ( conexión al servidor establecida )
@@ -75,8 +74,6 @@ funciones q impriman van aqui
 
 const
 */
-=======
->>>>>>> 0f218a899b0fc1bfc2beb38d9e726ed1ecbd16fc
 //Despliega los cohorts en el menu desplegable -
 fetch (cohortsJson)
         .then(function(cohorts){
