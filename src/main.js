@@ -42,12 +42,10 @@ function girls() {
                 }*/
                 //document.write("1. "+ data[0].name + " ");
                 //document.write("2. "+data[1].name);
-                });
-        
+                });       
                 }}
-            
-    
 
+<<<<<<< HEAD
     /*  lista completa de los readyStatevalores está documentada en XMLHTTPRequest.readyState y es la siguiente:
 0 (sin inicializar) o ( solicitud no inicializada )
 1 (carga) o ( conexión al servidor establecida )
@@ -77,20 +75,44 @@ funciones q impriman van aqui
 
 const
 */
+=======
+>>>>>>> 0f218a899b0fc1bfc2beb38d9e726ed1ecbd16fc
 //Despliega los cohorts en el menu desplegable -
 fetch (cohortsJson)
         .then(function(cohorts){
         return cohorts.json();
         })
         .then(function(list){
+        console.log(list);   //muestra 1 array con 51 objetos = cohorts
         const promo = list;
-        console.log(promo.length);
-        for (let i = 0; i<promo.length; i++ ){
+        console.log(promo.length); //muestra 51 = numero de objetos =cohorts
+        let cohortname = "";
+        nameOfCohorts = promo.filter(function(names){
+            if(names.id.substring(0,3)=== "lim"){
+                cohortname += `
+                <option>${names.id}</option>`;
+            }
+        })
+       /*------------->FOREACH
+        promo.forEach(function(names){
+            cohortname +=`
+            <option>${names.id}</option>`;
+        })*/
+        menu.innerHTML = cohortname;
+        /*for (let i = 0; i<promo.length; i++ ){
             const options = document.createElement("option");
             const containOp = document.createTextNode(promo[i].id);
             options.appendChild(containOp);
             console.log(promo[i].id);
             menu.appendChild(options);
 
-        }
+        }*/
         });
+/*fetch ("../data/cohorts/lim-2018-03-pre-core-pw/progress.json" )
+        .then(function(progress){
+        return progress.json();
+        })
+        .then(function(progress){
+            console.log(progress);
+        });
+*/

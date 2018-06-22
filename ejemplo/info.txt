@@ -1,3 +1,4 @@
+--------------------->orden de los jsprimero mainjsdespues data<--------------------------
 http = protocolo reglas, va a ver con la comunicacion cliente-servidor;
 tener un index.html es el protocolo para el http. si no lo encuentra envia un codigo 400 
 si lo encuentra sale codigo 200.
@@ -153,3 +154,86 @@ for(key of keys){
   jugadore:11
 
 --->for in es para iterar sobre las propiedades de los objetos sin utilizar el objet keys<-----
+------->mostrar cohort funcion en MAIN.JS
+mostrar cohort = boton 
+processCohortData convoca a las otras 3 funciones
+
+boton para seleccionar cohort 
+const buttonselectcohort = document...
+const buttonselectcohort =documeny..
+c
+
+
+ //llamadas
+        const SELECTEDcohhortDATA = {id:"lim",courses : ["intro"]};
+        const usersDATA = [{id : 1001, name: gonza},{id:1002, name="gabi"}];
+        const userprogressDATA={1001 : {exercises:1},1002:{exercises:0}};
+
+buttonaddclasss.addeventlistener (click, () =>{
+        saludo.classlist.add("class2");
+        saludo.cllassList.remove("class1");
+});
+
+buttonselectcohort.addeventlistener(click, ()=>{
+        let options ={
+                cohort : SELECTEDCOHORTDATA, 
+                cohortdata:{
+                        users:usersdata,
+                        progress:userprogresdata
+                        }
+                        };
+        
+        let userwithStats = processCohortData(options);
+        saludo.innerthtml = userwithststs[0].name * "con porcentaje"+ userwithstats
+        CONSOLE.LOG(userwithStats);
+})
+
+----->EN DATA.JS
+const processCohortData = (OPTION) =>{
+        CONSOLE.LOG(ENTRE A PROCESSCOHORTDATA);
+        consolo.log(options);
+
+        let computedData = computeusersstats(options.cohortdata.users, {},[]); //llamo la funcion
+        let sortedData = sortusers(computedData, "",""); //llamo la funcion
+        return computedData;
+
+}
+
+const computeusersstaats = (users,progres,courses) =<{
+        console.log(entre a computeusersstat);
+        let stats ={percent:100, exercises : {total:0}}
+        user[1].stats = stats;
+        user[2].stats = stats;
+        //stats.percent = 100
+        return [user[1],user[0], {},{}];
+};
+const sortUsrs =(users,orderby,orderdirection){
+    console.log(entre a sortusers);
+    return [users[1],users[0]];
+}
+--------->select<----------
+<select id="activityselector">
+        <option>lim</option>
+        <option>scl</option>
+
+const activities=document....;
+activities.addeventlistener(onchange,(e) =>{
+        console.log(e.target.selectedIndex);
+})
+-------------------->CSS<-----------
+en el header 90px ---->body ponerle un padding top :90px
+para q el header se mantenla la posicion al bajar en la pagina
+
+header{
+position: fixed;
+top: 0;
+left: 0;
+rigth: 0;
+}
+/*  lista completa de los readyStatevalores está documentada en XMLHTTPRequest.readyState y es la siguiente:
+0 (sin inicializar) o ( solicitud no inicializada )
+1 (carga) o ( conexión al servidor establecida )
+2 (cargado) o ( solicitud recibida )
+3 (interactivo) o ( solicitud de procesamiento )
+4 (completo) o ( solicitud finalizada y la respuesta está lista )
+*/ 
