@@ -129,3 +129,26 @@ const combined = ages
   .reduce((a, b) => a + b, 0);
 
 console.log(combined);
+
+//ejemplo para el substring y filtar por letras
+const promo = [{id: "cdmx-2016-01-bc-core-egresadas20161bootcamp", end: "2016-06-30", usersCount: 30, start: "2016-01-01"},
+{id: "lim-2016-07-bc-core-egresadas20162bootcamp", end: "2016-12-31", usersCount: 50, start: "2016-07-01"}];
+ 
+let onlyLima = promo.filter(function(names){
+  if(names.id){
+    return(names.id.substring(0,3)=== "lim");
+  }
+})
+
+ console.log(onlyLima);
+  
+  
+//var windowArray = ["item", "thing", "id-3-text", "class", "3-id-text"];
+//var textToFind = "id-";
+
+//if you only want to match id- as prefix 
+//var matches = windowArray.filter(function(windowValue){
+ // if(windowValue) {
+ //     return (windowValue.substring(0, textToFind.length) === textToFind);
+//  }
+//}); //["id-3-text"]/*

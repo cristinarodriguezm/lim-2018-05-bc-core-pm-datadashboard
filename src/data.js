@@ -1,4 +1,4 @@
-/*
+/*aqui fetch
 
 1) computeUsersStats(users, progress, courses)
 2) sortUsers(users, orderBy, orderDirection)
