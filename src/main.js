@@ -48,6 +48,35 @@ function girls() {
                 });       
                 }}
 
+    /*  lista completa de los readyStatevalores está documentada en XMLHTTPRequest.readyState y es la siguiente:
+0 (sin inicializar) o ( solicitud no inicializada )
+1 (carga) o ( conexión al servidor establecida )
+2 (cargado) o ( solicitud recibida )
+3 (interactivo) o ( solicitud de procesamiento )
+4 (completo) o ( solicitud finalizada y la respuesta está lista )
+*/ 
+
+fetch ("../data/cohorts/lim-2018-03-pre-core-pw/progress.json" )
+        .then(function(progress){
+        return progress.json();
+        })
+        .then(function(progress){
+            console.log(progress);
+        });
+
+
+
+/*form.addEventListener("submit", function(e){
+    e.preventDefault();
+    resultBox.innerHTML="";
+    searchedForText = searchField.value;
+    getNews();
+});
+
+funciones q impriman van aqui
+
+const
+*/
 //Despliega los cohorts en el menu desplegable -
 fetch (cohortsJson)
         .then(function(cohorts){
