@@ -237,3 +237,33 @@ rigth: 0;
 3 (interactivo) o ( solicitud de procesamiento )
 4 (completo) o ( solicitud finalizada y la respuesta está lista )
 */ 
+---------->for each y for<-----------
+/* ----------------> USANDO ForEACH <----------
+               let html = "";
+                data.forEach(function(names){
+                    html +=`
+                    <li>${names.name}</li>`;
+                })
+             listStudents.innerHTML = html;*/
+            /*-------------------->USANDO for <-----------
+             for(let i=0; i<data.length; i++){
+                    let students = document.createElement("li");
+                    students.innerHTML = data[i].name + " ";
+                    listStudents.appendChild(students);
+                }*/
+                //document.write("1. "+ data[0].name + " ");
+                //document.write("2. "+data[1].name); 
+
+ /*------------->FOREACH
+        promo.forEach(function(names){
+            cohortname +=`
+            <option>${names.id}</option>`;
+        })*/
+        /*for (let i = 0; i<promo.length; i++ ){
+            const options = document.createElement("option");
+            const containOp = document.createTextNode(promo[i].id);
+            options.appendChild(containOp);
+            console.log(promo[i].id);
+            menu.appendChild(options);
+
+        }*/
