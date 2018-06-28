@@ -22,4 +22,14 @@ const computeUserStates = (users, progress, courses)=>{
 const sortUsrs =(users,orderby,orderdirection){
     console.log(sortusers)
 }
+como llamar a processCohortData
+ const userwithstats = processcohortdata(options);
+ console.log(userwithstats)
+ userwithstats.forEach(function() {
+
+ })
 */
+
+
+
+
