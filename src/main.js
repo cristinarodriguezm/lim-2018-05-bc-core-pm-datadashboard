@@ -10,114 +10,120 @@ const menu = document.getElementById("listCo");
 const butOfList = document.querySelector('button');
 //butOfList.addEventListener("click", girls);
 
-function girls() {
-  if (menu.value ==="lim-2018-03-pre-core-pw"){
-    fetch(usersJson)
-      .then(function(response){
-        return response.json(); //conexion con el json
-                    //y como queremos q lo traiga json
-      })
-      .then(function(data){ //aqui ya tenemos los datos,
-        let html = "";
-        let progre = "";
-        nameOfStudents = data.filter(function(names){
-          if( names.signupCohort === "lim-2018-03-pre-core-pw" && names.role === "student"){
-             progre = busProg(names.id);
-             console.log(progre);
-            html +=`            
-            <tr><td>${names.name}</td></tr>`;
-          }
-        })
-        listStudents.innerHTML = html;
-         
-          });     
-        }}
-
 
 
 //Despliega los cohorts en el menu desplegable -
 fetch (cohortsJson)
-    .then(function(cohorts){
-    return cohorts.json();
-    })
-    .then(function(list){
-    const promo = list;
-    
-    let cohortname = "";
-    nameOfCohorts = promo.filter(function(names){
-      if(names.id.substring(0,3)=== "lim"){
-        cohortname += `
-        <option>${names.id}</option>`;
-      }
-    })
- 
-    menu.innerHTML = cohortname;
-    
-    });
-function busProg(progre) { 
-  let num = 0;    
-  fetch (progressJson)
-    .then(function(progress){
-    return progress.json();
-    })
-    .then(function(progress){
-   
-      let daata = Object.keys(progress);
-      daata.forEach(function(keys){
-           if(progre === daata[num]){
-             return daata[num];
-        }
-        num++;
-      
-      }
-      ) 
-      
-    }
-    
-  );
-};
-
-const getData = (callback) => {
-  fetch(usersJson)
-    .then((responseU) => {
-      fetch(progressJson)
-        .then((responseP) => {
-          fetch(cohortsJson)
-            .then((responseC) => {
-              // responseU.json().then(users => {
-              //   responseP.json().then(progress => {
-              //     responseC.json().then(cohorts => {
-              //       callback && callback(users, progress, cohorts);
-              //     })
-              //   })
-              // })
-              Promise.all([responseU.json(), responseP.json(), responseC.json()]).then(dataArr => {
-                const [users, progress, cohorts] = dataArr;
-                // const users = dataArr[0]
-                // const progress = dataArr[1]
-                // const cohorts = dataArr[2]
-                callback && callback(users, progress, cohorts);
-              })
-            })
+        .then(function(cohorts){
+        return cohorts.json();
         })
-    })
-}
+        .then(function(list){
+        //console.log(list);   //muestra 1 array con 51 objetos = cohorts
+        const promo = list;
+        //console.log(promo.length); //muestra 51 = numero de objetos =cohorts
+        let cohortname = "";
+        nameOfCohorts = promo.filter(function(names){
+            if(names.id.substring(0,3)=== "lim"){
+                cohortname += `
+                <option>${names.id}</option>`;
+            }
+        })
+       menu.innerHTML = cohortname;
+        
+        });
 
+function girls() {
+     if (menu.value ==="lim-2018-03-pre-core-pw"){
+        // fetch(usersJson)
+        //     .then(function(response){
+        //         return response.json(); //conexion con el json
+        //                                         //y como queremos q lo traiga json
+        //         })
+        //         .then(function(data){ //aqui ya tenemos los datos,
+                let html = "";
+                nameOfStudents = users.filter(function(names){
+                if( names.signupCohort === "lim-2018-03-pre-core-pw" && names.role === "student"){
+                html +=`                        
+                <tr><td>${names.name}</td></tr>`;
+                     }
+                
+                })
+                
+                listStudents.innerHTML = html;
+                }}//);       
+               // }}        
+          
+// fetch (progressJson)
+//         .then(function(progress){
+//         return progress.json();
+//         })
+//         .then(function(progress){
+//             progresoG = progress
+        
+//             //Object.keys(progress["00hJv4mzvqM3D9kBy3dfxoJyFV82"])
+//              //  console.log(progress["00hJv4mzvqM3D9kBy3dfxoJyFV82"].intro);
+//             //let daata = Object.keys(progress);
+//         //num++;
+//             //console.log(progress[daata[num]].intro.totalDuration);
+//             let daata = Object.keys(progress);
+//             daata.forEach(function(keys){
+//                // console.log(keys);
+//                 //console.log(daata[num]);
+//                 //if(progre === daata[num]){
+//                     //console.log(progress[daata[num]].intro.totalDuration);
+//                    // return daata[num];
+//                // }
+//                // num++;
+//             //let datta = Object.keys(progress);
+//             //console.log(progress[datta[num]].intro.totalDuration);
+            
+//             }
+//             ) 
+            
+//         }
+        
+//     );
+
+//Anidando los 3 fetch
+const getDataR = (callback) => {
+        fetch(usersJson)
+          .then((responseUse) => {
+            fetch(progressJson)
+              .then((responsePro) => {
+                fetch(cohortsJson)
+                    .then((responseCoh) => { 
+                // responseU.json().then(users => {
+                //   responseP.json().then(progress => {
+                //     responseC.json().then(cohorts => {
+                //       callback && callback(users, progress, cohorts);
+                //     })
+                //   })
+                // })
+                Promise.all([responseUse.json(),responsePro.json(), responseCoh]).then(dataArr => {
+                  [window.users, window.progress, window.cohorts] = dataArr;
+                  // const users = dataArr[0]
+                  // const progress = dataArr[1]
+                  // const cohorts = dataArr[2]
+                  callback && callback(users, progress,cohorts);
+                })
+                })
+              })
+          })
+      }
+  
+  
 const callbackGetData = (users, progress, cohorts) => {
-  // console.log('BEGIN')
-  // console.log(users, progress, cohorts)
-  // console.log('END')
+    console.log('BEGIN');
+    console.log(users, progress, cohorts);
+    console.log('END');
 
-users.forEach((user) => {
-  const usuario = user.id;
-  const uprogress = progress[usuario];
+    users.forEach((user)=>{
+        const userId = user.id;
+        const userProgress = progress[userId];
+        console.log(userProgress);
+    })
+  }
+  
+getDataR(callbackGetData)
 
-  console.log(usuario);
-
-})
-
-}
-
-getData(callbackGetData)
-
-
+  //alineando users y sus progress
