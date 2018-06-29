@@ -30,22 +30,7 @@ function girls() {
                 })
                 listStudents.innerHTML = html;
                
-               /* ----------------> USANDO ForEACH <----------
-               let html = "";
-                data.forEach(function(names){
-                    html +=`
-                    <li>${names.name}</li>`;
-                })
-             listStudents.innerHTML = html;*/
-            /*-------------------->USANDO for <-----------
-             for(let i=0; i<data.length; i++){
-                    let students = document.createElement("li");
-                    students.innerHTML = data[i].name + " ";
-                    listStudents.appendChild(students);
-                }*/
-                //document.write("1. "+ data[0].name + " ");
-                //document.write("2. "+data[1].name);
-                });       
+                           });       
                 }}
 
 
@@ -66,20 +51,9 @@ fetch (cohortsJson)
                 <option>${names.id}</option>`;
             }
         })
-       /*------------->FOREACH
-        promo.forEach(function(names){
-            cohortname +=`
-            <option>${names.id}</option>`;
-        })*/
+      
         menu.innerHTML = cohortname;
-        /*for (let i = 0; i<promo.length; i++ ){
-            const options = document.createElement("option");
-            const containOp = document.createTextNode(promo[i].id);
-            options.appendChild(containOp);
-            console.log(promo[i].id);
-            menu.appendChild(options);
-
-        }*/
+        
         });
 function busProg(progre) { 
     let num = 0;        
@@ -89,22 +63,8 @@ function busProg(progre) {
         })
         .then(function(progress){
         
-            //Object.keys(progress["00hJv4mzvqM3D9kBy3dfxoJyFV82"])
-             //  console.log(progress["00hJv4mzvqM3D9kBy3dfxoJyFV82"].intro);
-            //let daata = Object.keys(progress);
-            //num++;
-            //console.log(progress[daata[num]].intro.totalDuration);
             let daata = Object.keys(progress);
             daata.forEach(function(keys){
-                //console.log(keys);
-                //console.log(daata[num]);
-                if(progre === daata[num]){
-                    //console.log(progress[daata[num]].intro.totalDuration);
-                    return daata[num];
-                }
-                num++;
-            //let datta = Object.keys(progress);
-            //console.log(progress[datta[num]].intro.totalDuration);
             
             }
             ) 
