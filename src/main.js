@@ -8,10 +8,10 @@ const menu = document.getElementById("listCo");
 
 //Muestra a las alumnas
 const butOfList = document.querySelector('button');
+
 butOfList.addEventListener("click", leeJsons);
+
 
 function leeJsons(){
   new leeJson();
           
-}
-               
