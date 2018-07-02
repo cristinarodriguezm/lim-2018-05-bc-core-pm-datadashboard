@@ -81,6 +81,11 @@ como llamar a processCohortData
 
  })
 */
+//primeera funcion
+window.computeUsersStats = (users, progress, courses) => {
+
+    
+}
 
 
 
