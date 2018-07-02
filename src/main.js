@@ -48,7 +48,7 @@ function girls() {
                      }
                 
                 })
-                
+                console.log(nameOfStudents);
                 listStudents.innerHTML = html;
                 }}//);       
                // }}        
@@ -113,17 +113,24 @@ const getDataR = (callback) => {
   
   
 const callbackGetData = (users, progress, cohorts) => {
-    console.log('BEGIN');
-    console.log(users, progress, cohorts);
-    console.log('END');
+    // console.log('BEGIN');
+    // console.log(users, progress, cohorts);
+    // console.log('END');
 
     users.forEach((user)=>{
         const userId = user.id;
         const userProgress = progress[userId];
-        console.log(userProgress);
+     
+        
+     const entradas = Object.entries(userProgress);
+         const temas = entradas[0];
+    console.log(temas[1])
     })
   }
   
 getDataR(callbackGetData)
-
+// const temas = entradas[0];
+        // console.log(temas[1].percent)
   //alineando users y sus progress
+ let stats = new Object ();
+ 

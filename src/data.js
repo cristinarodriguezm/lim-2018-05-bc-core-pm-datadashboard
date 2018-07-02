@@ -1,3 +1,55 @@
+const computeUserStats = (users,progress, courses) => {
+    
+    if (userProgress === {}) {
+        stats = {
+            percent: 0,
+            exercises : {
+                total: 0,
+                completed: 0 ,
+                percent: 0
+                },
+            reads: {
+                total: 0,
+                completed: 0,
+                percent: 0
+                },
+            quizzes: {
+                total: 0,
+                completed: 0,
+                percent: 0,
+                scoreSum: 0,
+                scoreAvg: 0,
+            }
+        }  
+
+    }
+    stats = {
+        percent: " ",
+        exercises : {
+            total: " ",
+            completed: " " ,
+            percent: " "
+            },
+        reads: {
+            total: " ",
+            completed: " ",
+            percent: " "
+            },
+        quizzes: {
+            total: " ",
+            completed: " ",
+            percent: " ",
+            scoreSum: " ",
+            scoreAvg: " ",
+        }
+    }
+}
+
+const sortUser = (users, orderBy, orderDirection) =>{
+    
+}
+
+
 /*aqui fetch
 
 1) computeUsersStats(users, progress, courses)
