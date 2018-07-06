@@ -60,7 +60,7 @@ function toHierarchy(datUser, datProge) {
     try {
         let html = "";
         //for (let i = 0; i<promo.length; i++ ){        
-        for (let i = 0; i<20; i++ ){
+        for (let i = 0; i<30; i++ ){
 //            console.log(datUser[i].id);
 //            console.log(datUser[i].name);
 
@@ -71,13 +71,13 @@ function toHierarchy(datUser, datProge) {
               break;
             }   
             if (datUser[i].id === key){
-              console.log(datUser[i].id);
-              console.log("name : ", datUser[i].name);
-              console.log(key); 
-              console.log("completedUnits : ", infoJSON.intro.completedUnits);
-              console.log("completedDuration : ", infoJSON.intro.completedDuration);
-              console.log("totalUnits : ", infoJSON.intro.totalUnits);
-              console.log("percent : ", infoJSON.intro.percent);
+            //   console.log(datUser[i].id);
+            //   console.log("name : ", datUser[i].name);
+            //   console.log(key); 
+            //   console.log("completedUnits : ", infoJSON.intro.completedUnits);
+            //   console.log("completedDuration : ", infoJSON.intro.completedDuration);
+            //   console.log("totalUnits : ", infoJSON.intro.totalUnits);
+            //   console.log("percent : ", infoJSON.intro.percent);
               //console.log("units : ", infoJSON.intro.units);
             //  let datUnits = [];
               let datUnits = infoJSON.intro.units;
@@ -105,9 +105,9 @@ function toHierarchy(datUser, datProge) {
 function procUnits(datUnits){
 //  console.log(datUnits);
   for(unit in datUnits){
-      console.log(unit);
+    //   console.log(unit);
       for(part in unit){
-          console.log(part);
+        //   console.log(part);
       }
   }   
   for (let i = 0; i<datUnits.length; i++ ){
