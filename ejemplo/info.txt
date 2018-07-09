@@ -367,12 +367,111 @@ dataUsers.sort((obj1,obj2)=>{
 })
 
 
+solucionario del datadashboard(primero data y luego main)
+
+1.maquetado
+2.definir el flujo de eventos
+|---->en data
+//defino funciones expressions :primero se define y luego se invoca, guarda el valor de retorno en una variable
+        const sum = (a,b) =>{ //defino parametros
+                retur a+b;
+        }
+
+        console.log(sum(3,4))//ya son argumentos
+//defino function statements : se define y se llama antes o despues; proceso hoisting = elevacion
+        function sum2(a,b){
+                return a+b;
+        }
+        console.log(sum2(8,8));
+|---->en main
+console.log(sum(5,9))
+3. al hacer click en una sede salgan los cohorts en la pantalla.
+hay una lista <ul>
+y sus hijos <li>
+en el dom = 1.target : el q siempre vaa escuchar elemento
+         2.currenttarget: el que va a recibir en ese momento el evento
+--->en main
+const listCampus = documen.getElemnetById("sedes"); //sedes es el ul 
+const sectionMain = document.querySelector("#mai-content");
+
+listCampues.addEventListener("click", event =>{
+        console.log(event.target) //me trae en console, etiqueta en donde hicimos click (<li>ayrjset lima</li>)
+        const id = event.target.id;
+})
+muestra lim cdmx scl gdl sp
+A. enlazar la data de afuera y lo va a enlazar con el id de los elementos de la lista de las sedes
+
+para llamar la data
+peticion AJAX;
+
+const listCampus = documen.getElemnetById("sedes"); //sedes es el ul  //objeto
+const sectionMain = document.querySelector("#mai-content");
+
+const options ={
+        cohort:null,
+        cohortData:{
+                users:null,
+                progress:null,
+        },
+        orderBy:"name",
+        orderDirection: "ASC",
+        search=""
+};
+
+ const getData = (str,url,callback)=>{ //callback es una funcion
+         const xhr = new xmlhttprequest();
+         xhr.open("get",url,true);
+         xhr.addeventListener("load",event =>{//current traget = xhr, target
+                 if(event.target.readyState ===4){
+                         if(event.target.status !==200){
+                                 return console.log(new Error("http error: $(event.target.ststus ===404)"))
+                         } else{
+                                 const response = JSON.parse(event.target.responseText);
+                                 callback(str,response);
+                         }
+                 }
+         })
+         xhr.sed();
+ }
+
+const getDta=(str,url,callback)=>{
+
+}
+//aqui mostramos los  cohorts de cada pais al clickear
+const showCohorts =(id, arrCohorts)=>{
+       const cohortsOfCampus=  arrCohorts.filter(element =>{//filter es una funcion de orden mayor porque recibe otra funcion,crea un nuevoarray con elemntq cumplan una condicion
+        return element.id.indexOf(id) !== -1;
+        })
+        let content ="";
+        cohortsOfCampus.forEach(cohort =>{
+                content += `
+                <div class="abd">
+                <div id="${cohort.id}" clas="dftdr">
+                ${cohort.id}
+                </div>
+                </div>
+                `;
+        });
+        sectionMain.innerHTML = content;
+}
+
+const showUsers= (idCohort, arrUsers)=>{
+        console.log(idCohort,arrUsers);
+}
 
 
 
 
+listCampues.addEventListener("click", event =>{
+        console.log(event.target) //me trae en console, etiqueta en donde hicimos click (<li>ayrjset lima</li>)
+        const id = event.target.id;
+        getData(id, cohortsJson, showCohorts);
+})
 
-
+sectionMin.addEventListener("click", e=>{//CURRENT TRAGET =SECTIONMAIN
+        const id = e.target.id;
+        getData(id, "../data/cohort/"+${id}+"users.json",showUsers); //funciona con cualquiercohort
+})
 
 
 
