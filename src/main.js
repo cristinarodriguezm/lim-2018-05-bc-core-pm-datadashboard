@@ -57,7 +57,7 @@ const displayProgress= (idCohort,objProgress)=>{
         //console.log(idCohort,objProgress);
         options.cohortData.progress = objProgress;
         //console.log(options);
-        const studentsConStats = processCohortData(options);//objeto con propiedad
+        processCohortData(options);//objeto con propiedad
         // let template = "";
         // studentsConStats.forEach((objStudentConStats)=>{
         //     template += `
