@@ -5,29 +5,43 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Data Dashboard</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
-  </head>
+    <link rel="stylesheet" href="fontello.css">
+    </head>
   <body>
     
     <header class = "container">
-          <img srcset="../images/laboratoria-logoinit.png" class="logo">
-    </header>
-    <div class ="wrapper" id="father">
-            <button class="btn" id ="lim">Lima</button>
-            <button class="btn" id ="scl">Santiago</button>
-            <button class="btn" id ="spl">Sao Paulo</button>
-            <button class="btn" id="cdmx">CDMX</button>
-            <button class="btn" id="gdl">Guadalajara</button>
-    </div>
-    <nav class="mainWrapper">
-          <span class="mnsj">Selecciona tu Cohort &nbsp </span>
-          <select id = "listCo"> 
-            <option disabled="disabled" selected ="selected">Seleccionar...</option>
-          </select>
-          <button id ="button" class="btn1">Ver</button>
+          <img srcset="../images/laboratoria-logoinit.png" class="logo">        
+    </header>   
+         
+      <h4>
+          <input type="checkbox" id="btn-menu">
+          <label for="btn-menu"><span class="icon-menu"></span></label> 
+          <nav class ="wrapper" id="father">
+            <ul>
+              <li class="btn" id ="lim">Lima</li>
+              <li class="btn" id ="scl">Santiago</li>
+              <li class="btn" id ="spl">Sao Paulo</li>
+              <li class="btn" id="cdmx">CDMX</li>
+              <li class="btn" id="gdl">Guadalajara</li>
+            </ul>
+          </nav>
+      </h4>
+      
+    <div class="mainWrapper">
+        <div id="seleccion">    
+            <span class="mnsj">Selecciona tu Cohort &nbsp </span>
+               <select id = "listCo"> 
+               <option disabled="disabled" selected ="selected">Seleccionar...</option>
+               </select>
+            <button id ="button" class="btn1">Ver</button>
+        </div>
+        <div id="busqueda">          
           <input type="text" name="Name" value="Buscar por persona" id="buscar">
           <input type="submit" value="Buscar" class="btn1" id="btn2">
-    </nav>
+        </div>
+
+     </div>
+
     <section id="space">
         <!-- <table>
           <thead>
