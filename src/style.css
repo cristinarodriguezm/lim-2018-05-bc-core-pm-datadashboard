@@ -43,8 +43,7 @@ h4 label {
     width: 30 px;
     height: 30px;
     padding: 10px;
-    cursor: pointer;
-}
+ }
 
 .wrapper ul {
     margin: 0;
@@ -64,6 +63,7 @@ h4 label {
     flex-grow: 1;
     border-right: 1px solid #ffffff;
     margin: 0;
+    cursor: pointer;
 
 }
 

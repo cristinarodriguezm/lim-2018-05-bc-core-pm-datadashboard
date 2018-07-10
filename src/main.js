@@ -5,6 +5,7 @@ const sectionMain = document.querySelector("#space");
 const menu = document.getElementById("listCo");
 const sedeLima = document.getElementById("lim");
 const firtsMenu= document.getElementById("father");
+const paintStats = document.getElementById("stadistics")
 
 //objeto options, es devuelta por la funcion processCohortData
 const options ={
@@ -57,16 +58,26 @@ const displayProgress= (idCohort,objProgress)=>{
         //console.log(idCohort,objProgress);
         options.cohortData.progress = objProgress;
         //console.log(options);
-        processCohortData(options);//objeto con propiedad
-        // let template = "";
-        // studentsConStats.forEach((objStudentConStats)=>{
-        //     template += `
-        //     ${objStudentConStats.name}
-        //     ${math.floor(objStudentconStats.stats.percent)}
-        //     ${math.floor(objStudentconStats.stats.exercises.total)}
-        //     `
-        // })
-        // sectionMain.innerHTML =template;
+        const studentsWithStats = processCohortData(options);//RETORNA STUDENST UN ARRAY, CON PROPIEDAD STATS
+         let template = "";
+         studentsWithStats.forEach((objStudentConStats)=>{//recorro 
+             template += `
+             <thead>
+                <th>Nombres</th>
+                <th>Porcentaje Total</th>
+                <th>Ejercicios completos</th>
+                <th>Ejercicios Totales</th>
+             </thead> 
+             <tbody>
+                <tr>
+                  <td>${objStudentConStats.name}</td>
+                  <td>${Math.floor(objStudentconStats.stats.percent)}</td>
+                  <td>${Math.floor(objStudentconStats.stats.exercises.completed)}</td>
+                  <td>${Math.floor(objStudentconStats.stats.exercises.total)}</td>
+                </tr>
+              </tbody>`
+         })
+         paintStats.innerHTML =template;
     }
 
 const displayUsers= (idCohort, arrUsers)=>{

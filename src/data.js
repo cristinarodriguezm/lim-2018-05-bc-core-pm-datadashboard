@@ -17,10 +17,10 @@ window.computeUsersStats =(users, progress,courses)=>{
 
 
     const calculateStats = (progressUser, courses, type) =>{
-        let exercisesTotal = 0;
-        let exercisesCompleted = 0;
-        let readsTotal = 0;
-        let readsCompleted = 0;
+        let total = 0;
+        let completed = 0;
+        
+       
         let scoreSum =0;//quizzes
         let scoreAvg = 0;//quizzez
         courses.forEach((nameCourse)=>{
@@ -29,16 +29,16 @@ window.computeUsersStats =(users, progress,courses)=>{
                   //console.log(units);
                 units.forEach((objUnit)=>{
                     const parts = Object.values(objUnit.parts);
-                   // console.log(parts);//array
+                   // console.log(parts);//array con los valores de la unidad
                    debugger
                     switch(type){
                         case "practice":
                         const exercises = parts.filter(objPart => objPart.type === "practice" && objPart.hasOwnProperty("exercises"));
-                        //debugger
+                        //array q solo contiene los ejercicios
                         console.log(exercises);
                         exercises.forEach((objExercise)=>{
-                            exercisesTotal += exercises.length;
-                            exercisesCompleted += objExercise.completed;
+                            total += exercises.length;//cantidad de ejercicios
+                            completed += objExercise.completed;//number
                         })
                         break;
                         case "read":
@@ -52,8 +52,8 @@ window.computeUsersStats =(users, progress,courses)=>{
                         const quizTotal = parts.filter(objPart => objPart.type === "quiz");
                         const quizCompleted =  parts.filter(objPart => objPart.type === "quiz" && objPart.completed === 1);
                         const quizPercent = (100*quizCompleted.length)/quizTotal;
-                        const quizTotalScore =
-                        const quizCompleteProm = 
+                        //const quizTotalScore =
+                        //const quizCompleteProm = 
                         break;
                     }
                     
@@ -63,15 +63,16 @@ window.computeUsersStats =(users, progress,courses)=>{
 
         })
         let response=  {
-            total: total,
-            completed: complete,
-            percent: complete/total
+            total: exerciseTotal,
+            completed: exercisesCompleted,
+            percent: exercisesComplete*100/exercisesTotal
         };
         if(type ==="quiz"){
             respuesta.scoreSum =scoreSum;
             respuesta.scoreAvg =scoreAvg
         }
-    }
+        return response;
+    };
 
 
 
@@ -115,7 +116,7 @@ window.processCohortData =(options)=>{
     //console.log(Object.keys(options.cohort.coursesIndex)) //un array cuyos elementos representan las propiedaddes del objeto courseIndex
     const courses = Object.keys(options.cohort.coursesIndex);
     let students =computeUsersStats(options.cohortData.users,options.cohortData.progress,courses);
-  //  sortUserStats();
+  //  sortUserStats(); 
   //  filterUsers();
     return students;
 }
