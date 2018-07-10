@@ -1,5 +1,5 @@
 window.computeUsersStats =(users, progress,courses)=>{
- try{  
+  
     //console.log(users, progress,courses);
     
      let students = users.filter(objUser => objUser.role ==="student");
@@ -19,10 +19,7 @@ window.computeUsersStats =(users, progress,courses)=>{
     const calculateStats = (progressUser, courses, type) =>{
         let total = 0;
         let completed = 0;
-        
-       
-        let scoreSum =0;//quizzes
-        let scoreAvg = 0;//quizzez
+        let scoreSum =0;//quiz
         courses.forEach((nameCourse)=>{
              if(progressUser.hasOwnProperty(nameCourse)){
                 const units = Object.values(progressUser[nameCourse].units);
@@ -30,10 +27,10 @@ window.computeUsersStats =(users, progress,courses)=>{
                 units.forEach((objUnit)=>{
                     const parts = Object.values(objUnit.parts);
                    // console.log(parts);//array con los valores de la unidad
-                   debugger
+                   
                     switch(type){
                         case "practice":
-                        const exercises = parts.filter(objPart => objPart.type === "practice" && objPart.hasOwnProperty("exercises"));
+                        let exercises = parts.filter(objPart => objPart.type === "practice" && objPart.hasOwnProperty("exercises"));
                         //array q solo contiene los ejercicios
                         console.log(exercises);
                         exercises.forEach((objExercise)=>{
@@ -42,18 +39,23 @@ window.computeUsersStats =(users, progress,courses)=>{
                         })
                         break;
                         case "read":
-                        const readsTotal = parts.filter(objPart => objPart.type === "read");
-                        const readsCompleted = parts.filter(objPart => objPart.type === "read" && objPart.completed === 1);
-                        readsTotal += readsTotal.length;
-                        readsCompleted += readsCompleted.length;
+                        let readsTotal = parts.filter(objPart => objPart.type === "read");
+                        let readsCompleted = parts.filter(objPart => objPart.type === "read" && objPart.completed === 1);
+                            total += readsTotal.length;
+                            completed += readsCompleted.length;
                         console.log(readsTotal, readsCompleted)
                         break;
                         case "quiz":
-                        const quizTotal = parts.filter(objPart => objPart.type === "quiz");
-                        const quizCompleted =  parts.filter(objPart => objPart.type === "quiz" && objPart.completed === 1);
-                        const quizPercent = (100*quizCompleted.length)/quizTotal;
-                        //const quizTotalScore =
-                        //const quizCompleteProm = 
+                        let quizTotal = parts.filter(objPart => objPart.type === "quiz");
+                        let quizCompleted =  parts.filter(objPart => objPart.type === "quiz" && objPart.completed === 1);
+                        quizCompleted.forEach(quiz => {
+                            scoreSum += quiz.score;
+                            console.log(quiz.score);
+                        } 
+                            
+                        );
+                            total += quizTotal.length;
+                            completed += quizCompleted.length
                         break;
                     }
                     
@@ -63,13 +65,13 @@ window.computeUsersStats =(users, progress,courses)=>{
 
         })
         let response=  {
-            total: exerciseTotal,
-            completed: exercisesCompleted,
-            percent: exercisesComplete*100/exercisesTotal
+            total: total,
+            completed: completed,
+            percent: completed*100/total
         };
         if(type ==="quiz"){
-            respuesta.scoreSum =scoreSum;
-            respuesta.scoreAvg =scoreAvg
+            response.scoreSum =scoreSum;
+            response.scoreAvg =scoreSum/total
         }
         return response;
     };
@@ -82,8 +84,8 @@ window.computeUsersStats =(users, progress,courses)=>{
             stats:{
                 percent : calculatePercent(progress[objStudent.id], courses),
                 exercises : calculateStats(progress[objStudent.id], courses, "practice"),
-                reads :null,
-                quizzes: null,
+                reads : calculateStats(progress[objStudent.id], courses, "read"),
+                quizzes: calculateStats(progress[objStudent.id], courses, "quiz") ,
                 
             }
         }
@@ -91,12 +93,6 @@ window.computeUsersStats =(users, progress,courses)=>{
     })
     console.log(students);  
     return students;
- }catch (error) {
-   console.log(error.name);
-   console.log(error.message);
-   console.log("Error linea: ", error.lineNumber);        
-   return;    
- }  
     
 }
 

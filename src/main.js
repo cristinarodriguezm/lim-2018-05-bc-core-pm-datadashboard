@@ -5,7 +5,7 @@ const sectionMain = document.querySelector("#space");
 const menu = document.getElementById("listCo");
 const sedeLima = document.getElementById("lim");
 const firtsMenu= document.getElementById("father");
-const paintStats = document.getElementById("stadistics")
+const paintStats = document.getElementById("stats")
 
 //objeto options, es devuelta por la funcion processCohortData
 const options ={
@@ -55,28 +55,33 @@ const displayCohorts = (id, arrCohorts)=>{
 }
 
 const displayProgress= (idCohort,objProgress)=>{
-        //console.log(idCohort,objProgress);
+        console.log(idCohort,objProgress);
         options.cohortData.progress = objProgress;
         //console.log(options);
-        const studentsWithStats = processCohortData(options);//RETORNA STUDENST UN ARRAY, CON PROPIEDAD STATS
-         let template = "";
+        const studentsWithStats = processCohortData(options);
+        console.log(studentsWithStats)//RETORNA STUDENST UN ARRAY, CON PROPIEDAD STATS
+         let template = `<thead>
+         <th>Nombres</th>
+         <th>% Completitud</th>
+         <th>Porcentaje de Lecturas</th>
+         <th>Porcentaje de Ejercicios</th>
+         <th>Porcentaje de Quizzes</th>
+         <th>Promedio de Quizzes</th>
+      </thead>
+      <tbody>`;
          studentsWithStats.forEach((objStudentConStats)=>{//recorro 
              template += `
-             <thead>
-                <th>Nombres</th>
-                <th>Porcentaje Total</th>
-                <th>Ejercicios completos</th>
-                <th>Ejercicios Totales</th>
-             </thead> 
-             <tbody>
+             
                 <tr>
                   <td>${objStudentConStats.name}</td>
-                  <td>${Math.floor(objStudentconStats.stats.percent)}</td>
-                  <td>${Math.floor(objStudentconStats.stats.exercises.completed)}</td>
-                  <td>${Math.floor(objStudentconStats.stats.exercises.total)}</td>
-                </tr>
-              </tbody>`
+                  <td>${Math.floor(objStudentConStats.stats.percent)}</td>
+                  <td>${Math.floor(objStudentConStats.stats.exercises.percent)}</td>
+                  <td>${Math.floor(objStudentConStats.stats.reads.percent)}</td>
+                  <td>${Math.floor(objStudentConStats.stats.quizzes.percent)}</td>
+                  <td>${Math.floor(objStudentConStats.stats.quizzes.scoreAvg)}</td>
+                </tr>`
          })
+         template += `</tbody>`
          paintStats.innerHTML =template;
     }
 
