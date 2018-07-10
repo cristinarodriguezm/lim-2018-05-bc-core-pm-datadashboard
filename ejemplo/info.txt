@@ -475,5 +475,13 @@ sectionMin.addEventListener("click", e=>{//CURRENT TRAGET =SECTIONMAIN
 
 
 
+--------->funcion filter
+el metodo filter de los arrays, con una nueva longitud
+evaluar la existencia, solo el cero es false en el contexto booleano
+const newWords = words.filter(e=>e); //despues del arroz function debe retornar un valor booleano
+
+--------->funcion sort
+
+
 
 
