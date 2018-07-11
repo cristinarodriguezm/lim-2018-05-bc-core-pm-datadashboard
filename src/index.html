@@ -33,14 +33,22 @@
                <select id = "listCo"> 
                <option disabled="disabled" selected ="selected">Seleccionar...</option>
                </select>
-            <button id ="button" class="btn1">Ver</button>
         </div>
         <div id="busqueda">          
-          <input type="text" name="Name" value="Buscar por persona" id="buscar">
-          <input type="submit" value="Buscar" class="btn1" id="btn2">
+          <input type="text" placeholder="Search" id="search">
         </div>
 
      </div>
+     <div>
+      <select id="order-by">
+        <option value="name" selected>Nombre</option>
+        <option value="percent">Porcentaje de Completitud</option>
+      </select>
+      <select id="order-direction">
+        <option value="ASC" selected>Ascendente</option>
+        <option value="DESC">Descendente</option>
+      </select>
+    </div>
 
     <section id="space">
         <table id = "stats">
