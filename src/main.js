@@ -6,6 +6,7 @@ const menu = document.getElementById("listCo");
 const sedeLima = document.getElementById("lim");
 const firtsMenu= document.getElementById("father");
 const paintStats = document.getElementById("stats")
+let input = document.getElementById("search")
 
 //objeto options, es devuelta por la funcion processCohortData
 const options ={
@@ -58,13 +59,13 @@ const displayProgress= (idCohort,objProgress)=>{
         console.log(idCohort,objProgress);
         options.cohortData.progress = objProgress;
         //console.log(options);
-        const studentsWithStats = processCohortData(options);
+        let studentsWithStats = processCohortData(options);
         console.log(studentsWithStats)//RETORNA STUDENST UN ARRAY, CON PROPIEDAD STATS
          let template = `<thead>
          <th>Nombres</th>
          <th>% Completitud</th>
-         <th>Porcentaje de Lecturas</th>
          <th>Porcentaje de Ejercicios</th>
+         <th>Porcentaje de Lecturas</th>
          <th>Porcentaje de Quizzes</th>
          <th>Promedio de Quizzes</th>
       </thead>
@@ -74,11 +75,11 @@ const displayProgress= (idCohort,objProgress)=>{
              
                 <tr>
                   <td>${objStudentConStats.name}</td>
-                  <td>${Math.floor(objStudentConStats.stats.percent)}</td>
-                  <td>${Math.floor(objStudentConStats.stats.exercises.percent)}</td>
-                  <td>${Math.floor(objStudentConStats.stats.reads.percent)}</td>
-                  <td>${Math.floor(objStudentConStats.stats.quizzes.percent)}</td>
-                  <td>${Math.floor(objStudentConStats.stats.quizzes.scoreAvg)}</td>
+                  <td>${objStudentConStats.stats.percent}</td>
+                  <td>${objStudentConStats.stats.exercises.percent}</td>
+                  <td>${objStudentConStats.stats.reads.percent}</td>
+                  <td>${objStudentConStats.stats.quizzes.percent}</td>
+                  <td>${objStudentConStats.stats.quizzes.scoreAvg}</td>
                 </tr>`
          })
          template += `</tbody>`
@@ -116,4 +117,14 @@ menu.addEventListener("change", e=>{
           getData(id,cohortsJson, cohortSelected);
           getData(id,`../data/cohorts/${id}/users.json`, displayUsers);
         }
+})
+//evento de la 2da funcion
+//order.addEventListener("change", processCohortData)
+
+//evento de la 3ra funcion
+//evento para el search keyup() al dejar de escribir
+input.addEventListener("keyup", ()=>{
+        options.search = searchStudent.value.toUpperCase();
+        let studentsWithStats = processCohortData(options)
+        
 })
