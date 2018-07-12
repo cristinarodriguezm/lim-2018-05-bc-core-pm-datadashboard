@@ -58,7 +58,8 @@ describe('data', () => {
           total: 3,
           completed: 2,
           percent: 67,
-          scoreAvg: 29,
+          scoreSum: 57,
+          scoreAvg: 19,
         });
       });
 
@@ -92,8 +93,12 @@ describe('data', () => {
   });
 
   describe('filterUsers(users, filterBy)', () => {
-
-    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)');
+    const { users } = fixtures;
+    const search = "Lizeth"
+    const filtered = filterUsers(users, search);
+    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)', ()=>{
+      assert.deepEqual(filtered[0].name, 'Lizeth');
+    });
 
   });
 
