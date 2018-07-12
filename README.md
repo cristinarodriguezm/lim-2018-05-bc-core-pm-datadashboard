@@ -62,13 +62,17 @@ Al descargar la carpeta tendras acceso a estos archivos:
 ```
 
 
-## Entregables
+## Como nos organizamos
 
-Tu diseño debe seguir los fundamentos de _visual design_, como:
-contraste, alineación, jerarquía, entre otros. Tip: revisa el contenido de UX
-de la unidad de visual design.
+En un principio decidimos conceptualizarnos y practicar ejercicios de las nuevas herramientas que nos tocaba utilizar en este proyecto.
+Con estos conocimientos empezamos a desarrollar el proyecto, sin embargo tuvimos algunas lagunas conceptuales que nos llevaron a
+replantear nuestro proyecto desde 0.
+Con esta decision tomada, desarrollamos nuestro proyecto juntas haciendo peer-programing, y nos dimos cuenta que si funcionaba, que si nos beneficiaba.
+Desarrollamos la 1ra funcion juntas y para acelerar el trabajo, nos repartimos la 2da y la 3ra.
+Los tests los pasamos conforme fuimos terminando las funciones.
+Terminamos con un diseño diferente, pero contentas con el resultado y con los conocimientos aprendidos. 
 
-### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
+### La Interfaz de Usuario (HTML/CSS/JS)
 
 Luego de diseñar tu interfaz de usuario deberás trabajar en su implementación.
 Como mencionamos, **no** es necesario que construyas la interfaz tal como la

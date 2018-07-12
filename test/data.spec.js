@@ -93,8 +93,12 @@ describe('data', () => {
   });
 
   describe('filterUsers(users, filterBy)', () => {
-
-    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)');
+    const { users } = fixtures;
+    const search = "Lizeth"
+    const filtered = filterUsers(users, search);
+    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)', ()=>{
+      assert.deepEqual(filtered[0].name, 'Lizeth');
+    });
 
   });
 

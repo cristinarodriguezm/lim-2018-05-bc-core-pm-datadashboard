@@ -32,8 +32,6 @@ window.computeUsersStats =(users, progress,courses)=>{
                         case "practice":
                         let exercises = parts.filter(objPart => objPart.type === "practice" && objPart.hasOwnProperty("exercises"));
                         //array q solo contiene los ejercicios
-                        ;
-                        console.log(exercises);
                         exercises.forEach((objExercise, i)=>{
                            //cantidad de ejercicios //en cualquier posicion en q esten los ejercicios.
                         total += Object.keys(exercises[i].exercises).length  
@@ -45,14 +43,12 @@ window.computeUsersStats =(users, progress,courses)=>{
                         let readsCompleted = parts.filter(objPart => objPart.type === "read" && objPart.completed === 1);
                             total += readsTotal.length;
                             completed += readsCompleted.length;
-                        console.log(readsTotal, readsCompleted)
                         break;
                         case "quiz":
                         let quizTotal = parts.filter(objPart => objPart.type === "quiz");
                         let quizCompleted =  parts.filter(objPart => objPart.type === "quiz" && objPart.completed === 1);
                         quizCompleted.forEach(quiz => {
                             scoreSum += quiz.score;
-                            console.log(quiz.score);
                         } 
                             
                         );
@@ -93,8 +89,7 @@ window.computeUsersStats =(users, progress,courses)=>{
             }
         }
         return objectWithPropertysOfUsers;
-    })
-    console.log(students);  
+    }) 
     return students;
     
 }
@@ -191,21 +186,26 @@ window.sortUsers = (users, orderBy, orderDirection) => {
 
 //3ra funcion
 window.filterUsers = (users, search)=>{
-    let usersFilter = users.filter(userfilterer =>userFilter.name.toUpperCase().indexOf(search.toLowerCase())>-1 );
-
+    let usersFilter = users.filter(
+        userFilterer => userFilterer.name.toLowerCase().indexOf(search.toLowerCase())>-1 
+    );
+    return usersFilter;
 
 }
 
 //4ta funcion
 window.processCohortData =(options)=>{
-    console.log(options);
     //console.log(Object.keys(options.cohort.coursesIndex)) //un array cuyos elementos representan las propiedaddes del objeto courseIndex
     const courses = Object.keys(options.cohort.coursesIndex);
+    //1ra
     let students =computeUsersStats(options.cohortData.users,options.cohortData.progress,courses);
-    let studentsOrdered = sortUsers(students, "name", "ASC");
-
+   
+    //2da
+    //let studentsOrdered = sortUsers(studentsFiltrados, "name", "ASC");
+     //3ra
+     let studentsFiltrados = filterUsers(students, options.search);
     //  sortUserStats(); 
     //  filterUsers();
-    return studentsOrdered;
-   // let studentsFiltrados = filterUsers(students, options.search)
+    return studentsFiltrados;
+   // 
 }
