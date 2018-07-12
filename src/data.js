@@ -32,8 +32,6 @@ window.computeUsersStats =(users, progress,courses)=>{
                         case "practice":
                         let exercises = parts.filter(objPart => objPart.type === "practice" && objPart.hasOwnProperty("exercises"));
                         //array q solo contiene los ejercicios
-                        ;
-                        console.log(exercises);
                         exercises.forEach((objExercise, i)=>{
                            //cantidad de ejercicios //en cualquier posicion en q esten los ejercicios.
                         total += Object.keys(exercises[i].exercises).length  
@@ -45,14 +43,12 @@ window.computeUsersStats =(users, progress,courses)=>{
                         let readsCompleted = parts.filter(objPart => objPart.type === "read" && objPart.completed === 1);
                             total += readsTotal.length;
                             completed += readsCompleted.length;
-                        console.log(readsTotal, readsCompleted)
                         break;
                         case "quiz":
                         let quizTotal = parts.filter(objPart => objPart.type === "quiz");
                         let quizCompleted =  parts.filter(objPart => objPart.type === "quiz" && objPart.completed === 1);
                         quizCompleted.forEach(quiz => {
                             scoreSum += quiz.score;
-                            console.log(quiz.score);
                         } 
                             
                         );
@@ -93,8 +89,7 @@ window.computeUsersStats =(users, progress,courses)=>{
             }
         }
         return objectWithPropertysOfUsers;
-    })
-    console.log(students);  
+    }) 
     return students;
     
 }
@@ -194,14 +189,12 @@ window.filterUsers = (users, search)=>{
     let usersFilter = users.filter(
         userFilterer => userFilterer.name.toLowerCase().indexOf(search.toLowerCase())>-1 
     );
-    console.log(usersFilter);
     return usersFilter;
 
 }
 
 //4ta funcion
 window.processCohortData =(options)=>{
-    console.log(options);
     //console.log(Object.keys(options.cohort.coursesIndex)) //un array cuyos elementos representan las propiedaddes del objeto courseIndex
     const courses = Object.keys(options.cohort.coursesIndex);
     //1ra

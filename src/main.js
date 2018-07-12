@@ -21,7 +21,6 @@ const options ={
 };
 
 const getData = (str,file,callback)=>{ //callback es una funcion
-       // console.log(str,file);
     const request = new XMLHttpRequest();
     request.open("GET",file,true);
     request.addEventListener("load", event =>{//current traget = xhr, target
@@ -55,13 +54,8 @@ const displayCohorts = (id, arrCohorts)=>{
         menu.innerHTML = cohortName;
 }
 
-const displayProgress= (idCohort,objProgress)=>{
-        console.log(idCohort,objProgress);
-        options.cohortData.progress = objProgress;
-        //console.log(options);
-        let studentsWithStats = processCohortData(options);
-        let studentsF = filterUsers(studentsWithStats, input.value);
-        console.log(studentsWithStats)//RETORNA STUDENST UN ARRAY, CON PROPIEDAD STATS
+const displayProgress2 = (studentsWithStats) => {
+        //RETORNA STUDENST UN ARRAY, CON PROPIEDAD STATS
          let template = `<thead>
          <th>Nombres</th>
          <th>% Completitud</th>
@@ -85,6 +79,15 @@ const displayProgress= (idCohort,objProgress)=>{
          })
          template += `</tbody>`
          paintStats.innerHTML =template;
+}
+
+const displayProgress= (idCohort,objProgress)=>{
+        
+        options.cohortData.progress = objProgress;
+        
+        let studentsWithStats = processCohortData(options);
+        let studentsF = filterUsers(studentsWithStats, input.value);
+        displayProgress2(studentsWithStats)
     }
 
 const displayUsers= (idCohort, arrUsers)=>{
@@ -106,7 +109,7 @@ const cohortSelected = (idCohort, dataCohorts)=>{
 input.addEventListener("keyup", ()=>{
         options.search = input.value;
         let filterStudentsWithStats = processCohortData(options);
-        displayProgress(filterStudentsWithStats);
+        displayProgress2(filterStudentsWithStats);
 })
  
 //evento de los botones q activan el select
