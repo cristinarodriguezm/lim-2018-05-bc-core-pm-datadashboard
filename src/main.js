@@ -60,6 +60,7 @@ const displayProgress= (idCohort,objProgress)=>{
         options.cohortData.progress = objProgress;
         //console.log(options);
         let studentsWithStats = processCohortData(options);
+        let studentsF = filterUsers(studentsWithStats, input.value);
         console.log(studentsWithStats)//RETORNA STUDENST UN ARRAY, CON PROPIEDAD STATS
          let template = `<thead>
          <th>Nombres</th>
@@ -100,6 +101,13 @@ const cohortSelected = (idCohort, dataCohorts)=>{
                 }
         })
 }
+//evento de la 3ra funcion
+//evento para el search keyup() al dejar de cribir
+input.addEventListener("keyup", ()=>{
+        options.search = input.value;
+        let filterStudentsWithStats = processCohortData(options);
+        displayProgress(filterStudentsWithStats);
+})
  
 //evento de los botones q activan el select
 firtsMenu.addEventListener("click", event =>{
@@ -121,10 +129,4 @@ menu.addEventListener("change", e=>{
 //evento de la 2da funcion
 //order.addEventListener("change", processCohortData)
 
-//evento de la 3ra funcion
-//evento para el search keyup() al dejar de escribir
-input.addEventListener("keyup", ()=>{
-        options.search = searchStudent.value.toUpperCase();
-        let studentsWithStats = processCohortData(options)
-        
-})
+

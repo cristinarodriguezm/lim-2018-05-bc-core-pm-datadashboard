@@ -191,8 +191,11 @@ window.sortUsers = (users, orderBy, orderDirection) => {
 
 //3ra funcion
 window.filterUsers = (users, search)=>{
-    let usersFilter = users.filter(userfilterer =>userFilter.name.toUpperCase().indexOf(search.toLowerCase())>-1 );
-
+    let usersFilter = users.filter(
+        userFilterer => userFilterer.name.toLowerCase().indexOf(search.toLowerCase())>-1 
+    );
+    console.log(usersFilter);
+    return usersFilter;
 
 }
 
@@ -201,11 +204,15 @@ window.processCohortData =(options)=>{
     console.log(options);
     //console.log(Object.keys(options.cohort.coursesIndex)) //un array cuyos elementos representan las propiedaddes del objeto courseIndex
     const courses = Object.keys(options.cohort.coursesIndex);
+    //1ra
     let students =computeUsersStats(options.cohortData.users,options.cohortData.progress,courses);
-    let studentsOrdered = sortUsers(students, "name", "ASC");
-
+   
+    //2da
+    //let studentsOrdered = sortUsers(studentsFiltrados, "name", "ASC");
+     //3ra
+     let studentsFiltrados = filterUsers(students, options.search);
     //  sortUserStats(); 
     //  filterUsers();
-    return studentsOrdered;
-   // let studentsFiltrados = filterUsers(students, options.search)
+    return studentsFiltrados;
+   // 
 }
