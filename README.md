@@ -64,11 +64,15 @@ Al descargar la carpeta tendras acceso a estos archivos:
 
 ## Como nos organizamos
 
-En un principio decidimos conceptualizarnos y practicar ejercicios de las nuevas herramientas que nos tocaba utilizar en este proyecto.
+Creamos un trello que nos ayude a organizar nuestras tareas.
+
+  ![Tablero de Trello](images/trelloactual.png "Reparticion de tareas")
+
+Con la ayuda de esta herramienta decidimos, como primer paso, conceptualizarnos y practicar ejercicios de los metodos y propiedades que nos tocaba utilizar en este proyecto.
 Con estos conocimientos empezamos a desarrollar el proyecto, sin embargo tuvimos algunas lagunas conceptuales que nos llevaron a
 replantear nuestro proyecto desde 0.
-Con esta decision tomada, desarrollamos nuestro proyecto juntas haciendo peer-programing, y nos dimos cuenta que si funcionaba, que si nos beneficiaba.
-Desarrollamos la 1ra funcion juntas y para acelerar el trabajo, nos repartimos la 2da y la 3ra.
+Con esta decision tomada, avanzamos juntas haciendo peer-programing, algo totalmente nuevo que no hicimos desde el comienzo; pero nos dimos cuenta que si funcionaba y que nos beneficiaba.
+Desarrollamos la 1ra función juntas y para acelerar el trabajo, nos repartimos la 2da y la 3ra función.
 Los tests los pasamos conforme fuimos terminando las funciones.
 Terminamos con un diseño diferente, pero contentas con el resultado y con los conocimientos aprendidos. 
 
