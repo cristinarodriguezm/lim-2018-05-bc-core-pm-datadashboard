@@ -1,7 +1,4 @@
 window.computeUsersStats =(users, progress,courses)=>{
-  
-    //console.log(users, progress,courses);
-    
      let students = users.filter(objUser => objUser.role ==="student");
      const calculatePercent = (progressUser, courses) => {
         let count = 0;
@@ -66,12 +63,17 @@ window.computeUsersStats =(users, progress,courses)=>{
         let response=  {
             total: total,
             completed: completed,
-            percent: Math.round(completed*100/total)
+            percent: Math.round(completed*100/total),
         };
         if(type ==="quiz"){
             response.scoreSum =scoreSum;
             response.scoreAvg =Math.round(scoreSum/total)
-        }
+        };
+        if(total === 0){
+            response.percent = 0;
+            response.scoreAvg = 0;
+
+        };
         return response;
     };
 
@@ -183,7 +185,6 @@ window.sortUsers = (users, orderBy, orderDirection) => {
 
 }
 
-
 //3ra funcion
 window.filterUsers = (users, search)=>{
     let usersFilter = users.filter(
@@ -199,13 +200,11 @@ window.processCohortData =(options)=>{
     const courses = Object.keys(options.cohort.coursesIndex);
     //1ra
     let students =computeUsersStats(options.cohortData.users,options.cohortData.progress,courses);
-   
     //2da
-    //let studentsOrdered = sortUsers(studentsFiltrados, "name", "ASC");
+    students = sortUsers(students, options.orderBy, options.orderDirection);
      //3ra
-     let studentsFiltrados = filterUsers(students, options.search);
-    //  sortUserStats(); 
-    //  filterUsers();
-    return studentsFiltrados;
+    students = filterUsers(students, options.search);
+   
+    return students;
    // 
 }

@@ -7,6 +7,8 @@ const sedeLima = document.getElementById("lim");
 const firtsMenu= document.getElementById("father");
 const paintStats = document.getElementById("stats")
 let input = document.getElementById("search")
+let order = document.getElementById("order-by");
+let direction = document.getElementById("order-direction");
 
 //objeto options, es devuelta por la funcion processCohortData
 const options ={
@@ -15,8 +17,8 @@ const options ={
             users:null,
             progress:null,
     },
-    orderBy:"name",//mandamos valores por defecto
-    orderDirection: "ASC",
+    orderBy:" ",//mandamos valores por defecto
+    orderDirection: " ",
     search:""
 };
 
@@ -130,6 +132,28 @@ menu.addEventListener("change", e=>{
         }
 })
 //evento de la 2da funcion
-//order.addEventListener("change", processCohortData)
+
+order.addEventListener("change", event => {
+        let view = event.target.value;
+        
+        let id = menu.options[menu.selectedIndex].value;
+        options.orderBy= view
+        options.orderDirection= direction.options[direction.selectedIndex].value;
+ 
+        getData(id,cohortsJson, cohortSelected);
+         getData(id,`../data/cohorts/${id}/users.json`, displayUsers);
+        
+ })
+ 
+ direction.addEventListener("change", event => {
+         let show = event.target.value;
+         let id = menu.options[menu.selectedIndex].value;
+         options.orderDirection=show;
+         options.orderDirection= direction.options[direction.selectedIndex].value;
+ 
+         getData(id,cohortsJson, cohortSelected);
+         getData(id,`../data/cohorts/${id}/users.json`, displayUsers);
+
+ })
 
 
