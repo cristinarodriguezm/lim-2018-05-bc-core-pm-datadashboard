@@ -7,11 +7,8 @@ const sedeLima = document.getElementById("lim");
 const firtsMenu= document.getElementById("father");
 const paintStats = document.getElementById("stats")
 let input = document.getElementById("search")
-<<<<<<< HEAD
-=======
 let order = document.getElementById("order-by");
 let direction = document.getElementById("order-direction");
->>>>>>> 9555cc7778bd8d83e695f3727dd09c711a031dcf
 
 //objeto options, es devuelta por la funcion processCohortData
 const options ={
@@ -20,13 +17,8 @@ const options ={
             users:null,
             progress:null,
     },
-<<<<<<< HEAD
-    orderBy:"name",//mandamos valores por defecto
-    orderDirection: "ASC",
-=======
     orderBy:" ",//mandamos valores por defecto
     orderDirection: " ",
->>>>>>> 9555cc7778bd8d83e695f3727dd09c711a031dcf
     search:""
 };
 
@@ -140,9 +132,6 @@ menu.addEventListener("change", e=>{
         }
 })
 //evento de la 2da funcion
-<<<<<<< HEAD
-//order.addEventListener("change", processCohortData)
-=======
 
 order.addEventListener("change", event => {
         let view = event.target.value;
@@ -166,6 +155,5 @@ order.addEventListener("change", event => {
          getData(id,`../data/cohorts/${id}/users.json`, displayUsers);
 
  })
->>>>>>> 9555cc7778bd8d83e695f3727dd09c711a031dcf
 
 

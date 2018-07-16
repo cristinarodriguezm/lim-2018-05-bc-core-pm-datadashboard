@@ -1,4 +1,4 @@
-# Data Dashboard para Laboratoria version 1.0 15/06/2018
+# Data Dashboard para Laboratoria version 3.0 16/07/2018
 
 ## Descripcion general
 

@@ -1,25 +1,8 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 9555cc7778bd8d83e695f3727dd09c711a031dcf
 @font-face {
     font-family: Bitter-Regular;
     src: url(Bitter-Regular.otf);
 }
 
-<<<<<<< HEAD
-@font-face {
-    font-family: OpenSans-Extra;
-    src: url(OpenSans-ExtraBold.ttf);
-}
-
-@font-face {
-    font-family: OpenSans-Regular;
-    src: url(OpenSans-Regular.ttf);
-}
-
-=======
->>>>>>> 9555cc7778bd8d83e695f3727dd09c711a031dcf
 body {
     margin: 0;
     font-family: Bitter-Regular;
@@ -74,31 +57,6 @@ h4 label {
 
 }
 
-<<<<<<< HEAD
-.btn1 {
-    color : #ffffff;
-    font-family: 'Bitter', serif;
-    text-decoration: none;
-    width: auto;
-    height: auto;
-    font-weight: 800%;
-    font-size: 80%;
-    background-color: #000000;
-    border-radius: 0px;
-    border: 2px solid #000000;
-    text-align: center;
-     
-}
-#listCo, #buscar{
-    font-family: 'Bitter', serif;
-    width: auto;
-    height: auto;
-    font-style: italic;
-    font-size: 70%;
-    color: #848484;
-    
-}
-=======
 
 input[type="text"] {
     background: #ffffff;
@@ -179,7 +137,6 @@ input[type="text"] {
     -o-transition: all 0.7s ease 0s;
     transition: all 0.7s ease 0s;
 }
->>>>>>> 9555cc7778bd8d83e695f3727dd09c711a031dcf
 
 .mainWrapper {
     font-family: Bitter-regular;
@@ -189,14 +146,6 @@ input[type="text"] {
     display: flex;
     padding: 0;
     margin: 0;
-<<<<<<< HEAD
-    justify-content: center;
-    
-   
-}
-
-@media (max-width: 768px) {
-=======
     justify-content: center; 
    
 }
@@ -233,7 +182,6 @@ table td:hover{
 }
 
 @media (max-width: 769px) {
->>>>>>> 9555cc7778bd8d83e695f3727dd09c711a031dcf
     h4 label {
         display: block;
         margin: 0;
@@ -270,23 +218,6 @@ table td:hover{
     height: auto;
     display: flex;
     padding: 0;
-<<<<<<< HEAD
-    margin: 0;
-    justify-content: center;
-    
-    }
-   #seleccion {
-       width: 100%;
-   
-   }
-
-   #busqueda {
-       width: 100%;
-    
-   }
-
-}
-=======
     margin: 0;  
     justify-content: center;
     flex-wrap: wrap;
@@ -388,7 +319,6 @@ table td:hover{
 }
 
 
->>>>>>> 9555cc7778bd8d83e695f3727dd09c711a031dcf
 /* @media screen  and (min-width: 800px){
     .logo {
         display: flex;
