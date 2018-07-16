@@ -7,15 +7,23 @@ Tuvimos conocimiento que las TMs ya habian tenido una forma de ver los datos del
 Con esta problematica, desarrollamos una plataforma que muestra el avance y desarrollo de cada una de las alumnas de una determinada sede y cohort.
 
 ## Nuestro proceso de diseño
+1. Primera Idea. 
+  Salio escribiendo conforme releiamos el readme, desmenuzabamos los conceptos para darnos una idea de lo requerido.
 
-1. Boceto en blanco y negro.
+  ![Primera pizarra](images/pizarra.png "Vista Inicial")
+  ![Seguda pizarra](images/tabla.png "Vista Tabla")  
+
+2. Boceto en blanco y negro.
   Desarrollamos nuestra primera idea al terminar de leer el readme; con los datos que rescatamos hicimos un boceto en photoshop ya que para mi compañera era mas facil trabajar en esta aplicacion. Salimos a buscar feedback, nuestra TM Ale nos indico que debiamos centrarnos mas en las estudiantes de lima, que no era necesario la comparacion entre alumnas ya que en las distintas sedes estaban en momentos diferentes del bootcamp, y que era mas factible ver el progreso de las alumnas en general para poder compararlas con un determinado nivel esperado y, si en caso estaban por debajo, apoyarlas en su aprendizaje.
 
     ![Primer boceto](images/bocetoinit.jpg)
     ![Segunda parte](images/cursos.jpeg "Continuacion")
     ![Tercera parte](images/ejercicios.jpeg "Continuacion")
 
-2. Segundo boceto en Figma.
+3.User Experience Design. 
+Al mostrarle el boceto a nuestro cliente (TM Alejandra), nos dio a conocer sus necesidades en cuanto a la plataforma, las cuales nos hicieron cambiar de opinion y replantear la vision que teniamos que era mas global por algo mas especifico. Ademas, nos señalo que no era necesario la comparacion entre alumnas ya que en las distintas sedes estaban en momentos diferentes del bootcamp, y que era mas factible ver el progreso de las alumnas en general para poder compararlas con un determinado nivel esperado y, si en caso estaban por debajo, apoyarlas en su aprendizaje.
+
+4. Segundo boceto en Figma.
   Desarrollamos el segundo boceto en la plataforma Figma, porque se pueden visualizar los logos e imagenes con mejor calidad. Apuntando a como queriamos que quedara nuestro producto final.
 
     ![Figma index](images/iniciolab.jpg "Index")
@@ -23,6 +31,11 @@ Con esta problematica, desarrollamos una plataforma que muestra el avance y desa
     ![Figma progreso general](images/progresolab.jpg "ProgresoGeneral")
     ![Figma progresoporalumna](images/alumnas.jpg "Alumnas")
 
+5. Producto Final.
+ Por ultimo, el resultado final es una sintesis de lo planteado en un comienzo con las necesidades que fueron surgiendo en el camino.
+
+ ![Mobile](images/mobile.png "Vista mobile")
+ ![Desktop](images/desktop.png "Vista Desktop")
 
 ## Requisitos basicos de la aplicacion
 
