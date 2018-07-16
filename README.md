@@ -62,13 +62,21 @@ Al descargar la carpeta tendras acceso a estos archivos:
 ```
 
 
-## Entregables
+## Como nos organizamos
 
-Tu diseño debe seguir los fundamentos de _visual design_, como:
-contraste, alineación, jerarquía, entre otros. Tip: revisa el contenido de UX
-de la unidad de visual design.
+Creamos un trello que nos ayude a organizar nuestras tareas.
 
-### Implementación de la Interfaz de Usuario (HTML/CSS/JS)
+  ![Tablero de Trello](images/trelloactual.png "Reparticion de tareas")
+
+Con la ayuda de esta herramienta decidimos, como primer paso, conceptualizarnos y practicar ejercicios de los metodos y propiedades que nos tocaba utilizar en este proyecto.
+Con estos conocimientos empezamos a desarrollar el proyecto, sin embargo tuvimos algunas lagunas conceptuales que nos llevaron a
+replantear nuestro proyecto desde 0.
+Con esta decision tomada, avanzamos juntas haciendo peer-programing, algo totalmente nuevo que no hicimos desde el comienzo; pero nos dimos cuenta que si funcionaba y que nos beneficiaba.
+Desarrollamos la 1ra función juntas y para acelerar el trabajo, nos repartimos la 2da y la 3ra función.
+Los tests los pasamos conforme fuimos terminando las funciones.
+Terminamos con un diseño diferente, pero contentas con el resultado y con los conocimientos aprendidos. 
+
+### La Interfaz de Usuario (HTML/CSS/JS)
 
 Luego de diseñar tu interfaz de usuario deberás trabajar en su implementación.
 Como mencionamos, **no** es necesario que construyas la interfaz tal como la
