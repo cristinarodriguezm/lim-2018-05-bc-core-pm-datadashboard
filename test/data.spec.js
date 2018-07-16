@@ -102,14 +102,6 @@ describe('data', () => {
       assert.equal(sortedUsers[0].stats.percent, 0);
     });
 
-<<<<<<< HEAD
-  describe('filterUsers(users, filterBy)', () => {
-    const { users } = fixtures;
-    const search = "Lizeth"
-    const filtered = filterUsers(users, search);
-    it('debería retornar nuevo arreglo solo con usuarios con nombres que contengan string (case insensitive)', ()=>{
-      assert.deepEqual(filtered[0].name, 'Lizeth');
-=======
     it('debería retornar arreglo de usuarios ordenado por porcentaje general DESC', ()=>{
       const orderBy = 'percent';
       const orderDirection ='DESC';
@@ -171,7 +163,6 @@ describe('data', () => {
       const orderDirection ='DESC';
       const sortedUsers = sortUsers(processed, orderBy, orderDirection);
       assert.equal(sortedUsers[0].stats.reads.percent, 100);
->>>>>>> 9555cc7778bd8d83e695f3727dd09c711a031dcf
     });
 
   });
