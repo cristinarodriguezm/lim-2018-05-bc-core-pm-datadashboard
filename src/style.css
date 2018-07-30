@@ -17,7 +17,7 @@ body {
 }
 
 
-h4{
+.nav-bar{
     width: 100%;
     background-color: #FFE521;
 
@@ -28,7 +28,7 @@ h4{
 
 }
 
-h4 label {
+.nav-bar label {
     display: none;
     width: 30 px;
     height: 30px;
@@ -81,7 +81,7 @@ input[type="text"] {
     
 }
 
-#order-by, #order-direction{
+.sorting{
     background: #ffffff;
     border: 1px solid #d1d1d1;
     font: Bitter-Regular;
@@ -180,9 +180,13 @@ table tr:hover {
 table td:hover{
     background: #56F89A;
 }
+.blanco{
+    color: #ffffff;
+    display: none;
+}
 
 @media (max-width: 769px) {
-    h4 label {
+    .nav-bar label {
         display: block;
         margin: 0;
     }
