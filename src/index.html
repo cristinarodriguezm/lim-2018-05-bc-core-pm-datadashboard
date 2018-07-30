@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>Data Dashboard</title>
   <link rel="stylesheet" href="style.css" />
@@ -12,10 +12,10 @@
 <body>
 
   <header class="container">
-    <img srcset="../images/laboratoria-logoinit.png" class="logo">
+    <img src="../images/laboratoria-logoinit.png" class="logo" alt="laboratoria">
   </header>
 
-  <h4>
+  <div class="nav-bar">
     <input type="checkbox" id="btn-menu">
     <label for="btn-menu">
       <span class="icon-menu"></span>
@@ -29,11 +29,11 @@
         <li class="btn" id="gdl">Guadalajara</li>
       </ul>
     </nav>
-  </h4>
+  </div>
 
   <div class="mainWrapper">
     <div id="seleccion">
-      <span class="mnsj">Selecciona tu Cohort &nbsp </span>
+      <span class="mnsj">Selecciona tu Cohort &nbsp;</span>
     </div>
     <div id="selector">
       <select id="listCo">
@@ -49,7 +49,7 @@
 
     <div class="tableOrder">
         
-          <select id="order-by">
+          <select id="order-by" class="sorting">
             <option selected disabled>Ordenar Por...</option>
             <option value="name">Nombre</option>
             <option value="percent">Porcentaje de Completitud</option>
@@ -59,7 +59,7 @@
             <option value="average">Puntaje Promedio</option>
           </select>
        
-          <select id="order-direction">
+          <select id="order-direction" class="sorting">
             <option value="ASC" selected>Ascendente</option>
             <option value="DESC">Descendente</option>
           </select>
@@ -69,6 +69,7 @@
     <br>
     <br>
   <section id="space">
+    <h6 class="blanco">.... </h6>
     <table id="stats">
 
     </table>
